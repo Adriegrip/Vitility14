@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- DHL Product Packagings -->
+    <record id="dhl_packaging_FLY" model="product.packaging">
+        <field name="name">DHL Flyer/Smalls</field>
+        <field name="shipper_package_code">FLY</field>
+        <field name="package_carrier_type">dhl</field>
+        <field name="max_weight">0.23</field>
+    </record>
+    <record id="dhl_packaging_COY" model="product.packaging">
+        <field name="name">DHL Parcels/Conveyables</field>
+        <field name="shipper_package_code">COY</field>
+        <field name="package_carrier_type">dhl</field>
+        <field name="max_weight">31.5</field>
+    </record>
+    <record id="dhl_packaging_NCY" model="product.packaging">
+        <field name="name">DHL Non-conveyables</field>
+        <field name="shipper_package_code">NCY</field>
+        <field name="package_carrier_type">dhl</field>
+    </record>
+    <record id="dhl_packaging_PAL" model="product.packaging">
+        <field name="name">DHL Pallets</field>
+        <field name="shipper_package_code">PAL</field>
+        <field name="height">10</field>
+        <field name="width">10</field>
+        <field name="length">10</field>
+        <field name="package_carrier_type">dhl</field>
+        <field name="max_weight">1000</field>
+    </record>
+    <record id="dhl_packaging_DBL" model="product.packaging">
+        <field name="name">DHL Double Pallets</field>
+        <field name="shipper_package_code">DBL</field>
+        <field name="package_carrier_type">dhl</field>
+        <field name="max_weight">1000</field>
+    </record>
+    <record id="dhl_packaging_BOX" model="product.packaging">
+        <field name="name">DHL Box</field>
+        <field name="shipper_package_code">BOX</field>
+        <field name="height">10</field>
+        <field name="width">10</field>
+        <field name="length">10</field>
+        <field name="package_carrier_type">dhl</field>
+        <field name="max_weight">70</field>
+    </record>
+
+    <record id="extra_weight_product" model="product.template">
+        <field name="name">Extra Weight</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="standard_price">0.0</field>
+        <field name="list_price">0.0</field>
+        <field name="type">service</field>
+        <field name="weight">0.0</field>
+        <field name="description_sale">Extra Weight</field>
+    </record>
+
+    <record id="extra_dimension_product" model="product.template">
+        <field name="name">Extra Dimension</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="standard_price">0.0</field>
+        <field name="list_price">0.0</field>
+        <field name="type">service</field>
+        <field name="weight">0.0</field>
+        <field name="description_sale">Extra Dimension</field>
+    </record>
+
+</odoo>
