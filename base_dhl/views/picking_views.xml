@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <label for="weight" position="before">
+                <label for="is_extra_weight" string="Extra Weight"/>
+                <div>
+                    <field name="is_extra_weight"
+                           class="oe_inline"
+                           style="width: 30%;"
+                           attrs="{'readonly': [('state', 'in', ['done', 'cancel'])]}"/>
+                    <field name="extra_weight"
+                           style="width: 70%;"
+                           attrs="{
+                               'invisible': [('is_extra_weight', '=', False)],
+                               'required': [('is_extra_weight', '=', True)],
+                               'readonly': [('state', 'in', ['done', 'cancel'])]
+                           }"/>
+                </div>
+                <label for="is_extra_dimension" string="Extra Dimension"/>
+                <div>
+                    <field name="is_extra_dimension"
+                           class="oe_inline"
+                           style="width: 30%;"
+                           attrs="{'readonly': [('state', 'in', ['done', 'cancel'])]}"/>
+                    <field name="extra_dimension"
+                           style="width: 70%;"
+                           attrs="{
+                               'invisible': [('is_extra_dimension', '=', False)],
+                               'required': [('is_extra_dimension', '=', True)],
+                               'readonly': [('state', 'in', ['done', 'cancel'])]
+                           }"/>
+                </div>
+            </label>
+        </field>
+    </record>
+
+</odoo>
+
