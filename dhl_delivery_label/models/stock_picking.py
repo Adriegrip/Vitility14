@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Copyright 2017 Onestein (<http://www.onestein.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
@@ -17,7 +16,6 @@ class StockPicking(models.Model):
     carrier_delivery_type = fields.Selection(related='carrier_id.delivery_type')
     tracker_code = fields.Char("Tracker Code")
 
-    @api.multi
     def button_print_dhl_label(self):
         self.ensure_one()
 
@@ -31,7 +29,8 @@ class StockPicking(models.Model):
             (self.carrier_id.dhl_password, _('DHL Password on Carrier')),
             (self.carrier_id.dhl_parcel_type, _('DHL Parcel Type on Carrier')),
             (self.carrier_id.dhl_account_id, _('DHL Account ID on Carrier')),
-            (self.carrier_id.dhl_shipment_option, _('DHL Shipment Option on Carrier')),
+            (self.carrier_id.dhl_shipment_option,
+             _('DHL Shipment Option on Carrier')),
             (self.partner_id.country_id, _('Country ID on Partner')),
             (self.partner_id.zip, _('Postal Code on Partner')),
             (self.partner_id.street_name, _('Street Name on Partner')),
@@ -41,8 +40,10 @@ class StockPicking(models.Model):
             (self.partner_id.phone, _('Phone on Partner')),
             (self.company_id.partner_id.country_id, _('Country on Company')),
             (self.company_id.partner_id.zip, _('Postal Code on Company')),
-            (self.company_id.partner_id.street_name, _('Street Name on Company')),
-            (self.company_id.partner_id.street_number, _('Street Number on Company')),
+            (self.company_id.partner_id.street_name,
+             _('Street Name on Company')),
+            (self.company_id.partner_id.street_number,
+             _('Street Number on Company')),
             (self.company_id.partner_id.city, _('City on Company')),
             (self.company_id.email, _('e-mail on Company')),
             (self.company_id.phone, _('Phone on Company')),
@@ -50,7 +51,8 @@ class StockPicking(models.Model):
 
         for item in to_check:
             if not item[0]:
-                raise ValidationError(_("Field ") + item[1] + _(" not found! Please, set it and retry."))
+                raise ValidationError(_("Field ") + item[1] + _(
+                    " not found! Please, set it and retry."))
 
         is_return = False
         for move in self.move_lines:
@@ -78,7 +80,6 @@ class StockPicking(models.Model):
             lastname = ''
             company_name = partner.name
 
-
         if carrier.prod_environment:
             api_base_url = 'https://api-gw.dhlparcel.nl/'
         else:
@@ -91,16 +92,16 @@ class StockPicking(models.Model):
             })
 
             auth_req = Request(
-                url=api_base_url+'authenticate/api-key',
+                url=api_base_url + 'authenticate/api-key',
                 data=request_xml,
                 headers={'Content-Type': 'application/json'}
             )
             access_token = json.loads(urlopen(auth_req).read())['accessToken']
-        except Exception, e:
+        except Exception as e:
             raise ValidationError(_("Error during authentication: ") + e.msg)
 
         tracker_codes = []
-        for i in range (0,self.number_of_packages):
+        for i in range(0, self.number_of_packages):
 
             labelId = uuid.uuid4().urn[9:]
 
@@ -154,7 +155,7 @@ class StockPicking(models.Model):
                     }
                 ],
                 "returnLabel": is_return,
-                "pieceNumber": i+1,
+                "pieceNumber": i + 1,
                 "quantity": self.number_of_packages,
                 "automaticPrintDialog": True
             }
@@ -173,36 +174,42 @@ class StockPicking(models.Model):
             try:
 
                 labels_req = Request(
-                    url=api_base_url+'labels',
+                    url=api_base_url + 'labels',
                     data=request_xml,
                     headers={'Content-Type': 'application/json'}
                 )
 
-                labels_req.add_header("Authorization", "Bearer %s" % access_token)
+                labels_req.add_header("Authorization",
+                                      "Bearer %s" % access_token)
                 labels_req.add_header("Accept", "application/pdf")
                 label_data = urlopen(labels_req).read()
                 label_data = base64.b64encode(label_data)
 
-            except Exception, e:
-                raise ValidationError(_("Error during label creation: ") + e.msg)
+            except Exception as e:
+                raise ValidationError(
+                    _("Error during label creation: ") + e.msg)
 
             try:
 
                 retrieve_req = Request(
-                    url=api_base_url+'labels/'+labelId,
+                    url=api_base_url + 'labels/' + labelId,
                     headers={'Content-Type': 'application/json'}
                 )
-                retrieve_req.add_header("Authorization", "Bearer %s" % access_token)
+                retrieve_req.add_header("Authorization",
+                                        "Bearer %s" % access_token)
 
                 retrieve_data = urlopen(retrieve_req).read()
                 tracker_codes.append(json.loads(retrieve_data)['trackerCode'])
-            except Exception, e:
-                raise ValidationError(_("Error during label retrieval: ") + e.msg)
+            except Exception as e:
+                raise ValidationError(
+                    _("Error during label retrieval: ") + e.msg)
 
             self.env['ir.attachment'].create({
-                'name': self.name + '-' + str(i+1) + '/' + str(self.number_of_packages) + '.pdf',
+                'name': self.name + '-' + str(i + 1) + '/' + str(
+                    self.number_of_packages) + '.pdf',
                 'datas': label_data,
-                'datas_fname': self.name + '-' + str(i+1) + '/' + str(self.number_of_packages) + '.pdf',
+                'datas_fname': self.name + '-' + str(i + 1) + '/' + str(
+                    self.number_of_packages) + '.pdf',
                 'res_model': 'stock.picking',
                 'res_id': self.id,
             })

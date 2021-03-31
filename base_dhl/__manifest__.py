@@ -8,7 +8,7 @@
     'author': 'Onestein',
     'website': 'http://www.onestein.eu',
     'category': 'Warehouse',
-    'version': '10.0.1.0.0',
+    'version': '14.0.1.0.0',
     'license': 'AGPL-3',
     'depends': [
         'delivery',

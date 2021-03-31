@@ -24,7 +24,7 @@
         <field name="shipper_package_code">PAL</field>
         <field name="height">10</field>
         <field name="width">10</field>
-        <field name="length">10</field>
+        <field name="packaging_length">10</field>
         <field name="package_carrier_type">dhl</field>
         <field name="max_weight">1000</field>
     </record>
@@ -39,7 +39,7 @@
         <field name="shipper_package_code">BOX</field>
         <field name="height">10</field>
         <field name="width">10</field>
-        <field name="length">10</field>
+        <field name="packaging_length">10</field>
         <field name="package_carrier_type">dhl</field>
         <field name="max_weight">70</field>
     </record>
