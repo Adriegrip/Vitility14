@@ -2,5 +2,5 @@
 # Copyright 2017 Onestein (<http://www.onestein.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-import delivery_carrier
-import product_packaging
+from . import delivery_carrier
+from . import product_packaging
