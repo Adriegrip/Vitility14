@@ -28,7 +28,6 @@ from odoo import models, fields, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    @api.multi
     @api.depends('street_name', 'street_number')
     def _get_street(self):
         for partner in self:

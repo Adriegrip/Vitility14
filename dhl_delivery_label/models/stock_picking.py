@@ -4,10 +4,13 @@
 
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
-from urllib2 import Request, urlopen
 import json
 import uuid
 import base64
+try:
+    import urllib.request as urllib2
+except ImportError:
+    import urllib2
 
 
 class StockPicking(models.Model):
