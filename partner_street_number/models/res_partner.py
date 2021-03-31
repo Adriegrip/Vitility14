@@ -52,7 +52,6 @@ class ResPartner(models.Model):
             partner.street_name = street_name
             partner.street_number = street_number
 
-    @api.multi
     def _display_address(self, without_company=False):
         """
         Inject a context key to prevent the 'street' name to be
