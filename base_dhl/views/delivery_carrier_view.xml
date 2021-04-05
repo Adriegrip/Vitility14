@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='destination']" position='before'>
-                <page string="DHL Configuration" attrs="{'invisible': [('delivery_type', '!=', 'dhl')]}">
+                <page string="DHL Configuration" attrs="{'invisible': [('delivery_type', '!=', 'fixed')]}">
                     <group>
                         <group>
                             <field name="dhl_user_id" attrs="{'required': [('delivery_type', '=', 'dhl')]}" groups="base.group_system"/>

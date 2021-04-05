@@ -10,7 +10,7 @@
                 <field name="carrier_delivery_type" invisible="1"/>
             </xpath>
             <xpath expr="//button[@name='button_scrap']" position='after'>
-                <button name="button_print_dhl_label" type="object" string="Print DHL Label" attrs="{'invisible': ['|',('state','!=','done'),('carrier_delivery_type', '!=', 'dhl')]}"/>
+                <button name="button_print_dhl_label" type="object" string="Print DHL Label" attrs="{'invisible': ['|',('state','!=','done'),('carrier_delivery_type', '!=', 'fixed')]}"/>
             </xpath>
         </field>
     </record>

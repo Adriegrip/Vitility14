@@ -13,11 +13,6 @@ class DeliveryCarrier(models.Model):
         if self.delivery_type == 'dhl':
             return [0]
 
-    delivery_type = fields.Selection(
-        selection_add=[('dhl', "DHL")],
-        ondelete={'dhl': lambda recs: recs.write(
-            {'delivery_type': 'fixed', 'fixed_price': 0})})
-
     dhl_user_id = fields.Char(string="DHL User ID")
     dhl_password = fields.Char(string="DHL Password")
     dhl_shipment_option = fields.Selection(
@@ -112,9 +107,22 @@ class StockPicking(models.Model):
     def _add_delivery_cost_to_so(self):
         self.ensure_one()
         sale_order = self.sale_id
-        if sale_order.invoice_shipping_on_delivery:
-            sale_order.with_context(picking_id=self.ids)._create_delivery_line(
-                self.carrier_id, self.carrier_price)
+        if sale_order and self.carrier_id.invoice_policy == 'real' and self.carrier_price:
+            delivery_lines = sale_order.order_line.filtered(
+                lambda l: l.is_delivery and l.currency_id.is_zero(
+                    l.price_unit) and l.product_id == self.carrier_id.product_id)
+            carrier_price = self.carrier_price * (
+                        1.0 + (float(self.carrier_id.margin) / 100.0))
+            if not delivery_lines:
+                sale_order.with_context(picking_id=self.ids)._create_delivery_line(self.carrier_id, carrier_price)
+            else:
+                delivery_line = delivery_lines[0]
+                delivery_line[0].write({
+                    'price_unit': carrier_price,
+                    # remove the estimated price from the description
+                    'name': sale_order.carrier_id.with_context(
+                        lang=self.partner_id.lang).name,
+                })
 
     # @api.multi
     # def do_transfer(self):
