@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-# Copyright 2017 Onestein (<http://www.onestein.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
 from odoo import models, fields, _, api
-from odoo.tools.float_utils import float_compare
 
 
 class DeliveryCarrier(models.Model):
@@ -15,12 +13,21 @@ class DeliveryCarrier(models.Model):
         if self.delivery_type == 'dhl':
             return [0]
 
-    delivery_type = fields.Selection(selection_add=[('dhl', "DHL")])
+    delivery_type = fields.Selection(
+        selection_add=[('dhl', "DHL")],
+        ondelete={'dhl': lambda recs: recs.write(
+            {'delivery_type': 'fixed', 'fixed_price': 0})})
 
     dhl_user_id = fields.Char(string="DHL User ID")
     dhl_password = fields.Char(string="DHL Password")
-    dhl_shipment_option = fields.Selection([('DOOR','Door'),('BP','Bp')], default="DOOR", string="DHL Shipment Option")
-    dhl_parcel_type = fields.Selection([('SMALL','Small'),('MEDIUM','Medium'),('LARGE','Large'),('PALLET','Pallet')], default="SMALL", string="DHL Parcel Type")
+    dhl_shipment_option = fields.Selection(
+        [('DOOR', 'Door'), ('BP', 'Bp')],
+        default="DOOR",
+        string="DHL Shipment Option")
+    dhl_parcel_type = fields.Selection(
+        [('SMALL', 'Small'), ('MEDIUM', 'Medium'), ('LARGE', 'Large'),
+         ('PALLET', 'Pallet')], default="SMALL",
+        string="DHL Parcel Type")
     dhl_account_id = fields.Char(string="DHL Account ID")
 
 
@@ -31,21 +38,22 @@ class SaleOrder(models.Model):
         sol = super(SaleOrder, self)._create_delivery_line(carrier, price_unit)
         for s in sol:
             vals = {
-                'price_unit': s.product_id.list_price
+                'price_unit': price_unit
             }
             if self._context.get('picking_id'):
-                picking_id = self.env['stock.picking'].browse(self._context.get('picking_id')[0])
+                picking_id = self.env['stock.picking'].browse(
+                    self._context.get('picking_id')[0])
                 vals.update({
                     'qty_delivered': picking_id.number_of_packages
                 })
             s.write(vals)
         return sol
 
-    @api.multi
     def action_confirm(self):
         for so in self:
             if so.carrier_id and \
-                    any([line.product_id.type == 'product' for line in so.order_line]) and \
+                    any([line.product_id.type == 'product' for line in
+                         so.order_line]) and \
                     all([not line.is_delivery for line in so.order_line]):
                 so.delivery_set()
         return super(SaleOrder, self).action_confirm()
@@ -79,7 +87,8 @@ class StockPicking(models.Model):
                 warning_mess = {
                     'title': _('Weight decreased!'),
                     'message': _('You are decreasing the weight! '
-                                 'Do not forget to manually update the delivery order if needed.'),
+                                 'Do not forget to manually update '
+                                 'the delivery order if needed.'),
                 }
                 return {'warning': warning_mess}
 
@@ -90,7 +99,8 @@ class StockPicking(models.Model):
                 warning_mess = {
                     'title': _('Dimension decreased!'),
                     'message': _('You are decreasing the dimension! '
-                                 'Do not forget to manually update the delivery order if needed.'),
+                                 'Do not forget to manually update '
+                                 'the delivery order if needed.'),
                 }
                 return {'warning': warning_mess}
 
@@ -99,12 +109,12 @@ class StockPicking(models.Model):
         if not self.is_extra_dimension:
             self.extra_dimension = 0.0
 
-    @api.multi
     def _add_delivery_cost_to_so(self):
         self.ensure_one()
         sale_order = self.sale_id
         if sale_order.invoice_shipping_on_delivery:
-            sale_order.with_context(picking_id=self.ids)._create_delivery_line(self.carrier_id, self.carrier_price)
+            sale_order.with_context(picking_id=self.ids)._create_delivery_line(
+                self.carrier_id, self.carrier_price)
 
     # @api.multi
     # def do_transfer(self):
@@ -165,39 +175,40 @@ class StockPicking(models.Model):
     #         picking._create_backorder()
     #     return True
 
-    @api.multi
     def action_set_delivered_qty(self, vals):
         for rec in self:
             if rec.sale_id:
-                line_id = rec.sale_id.order_line.filtered(lambda s: s.product_id == s.order_id.carrier_id.product_id)
+                line_id = rec.sale_id.order_line.filtered(
+                    lambda s: s.product_id == s.order_id.carrier_id.product_id)
                 if line_id:
                     line_id.write({
                         'qty_delivered': vals.get('number_of_packages')
                     })
 
-    @api.multi
     def remove_extra_weight_line(self):
         prod_tmpl_id = self.env.ref('base_dhl.extra_weight_product')
         for rec in self:
-            line_id = rec.sale_id.order_line.filtered(lambda l: l.is_extra_weight)
+            line_id = rec.sale_id.order_line.filtered(
+                lambda l: l.is_extra_weight)
             if line_id:
                 line_id.sudo().write({
                     'qty_delivered': 0.0,
                     'price_unit': 0.0,
                 })
-            move_line_id = rec.pack_operation_product_ids.filtered(lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
+            move_line_id = rec.pack_operation_product_ids.filtered(
+                lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
             move_line_id.write({
                 'qty_done': 0.0,
                 'product_qty': 0.0
             })
             return True
 
-    @api.multi
     def set_update_extra_weight_line(self, vals):
         SaleOrderLine = self.env['sale.order.line']
         prod_tmpl_id = self.env.ref('base_dhl.extra_weight_product')
         for rec in self:
-            line_id = rec.sale_id.order_line.filtered(lambda l: l.is_extra_weight)
+            line_id = rec.sale_id.order_line.filtered(
+                lambda l: l.is_extra_weight)
             if line_id:
                 line_id.sudo().write({
                     'qty_delivered': vals.get('extra_weight'),
@@ -217,36 +228,38 @@ class StockPicking(models.Model):
                 }
                 line_id = SaleOrderLine.sudo().create(values)
                 line_id.product_id_change()
-            move_line_id = rec.pack_operation_product_ids.filtered(lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
+            move_line_id = rec.pack_operation_product_ids.filtered(
+                lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
             move_line_id.write({
                 'qty_done': vals.get('extra_weight'),
                 'product_qty': vals.get('extra_weight')
             })
             return True
 
-    @api.multi
     def remove_extra_dimension_line(self):
         prod_tmpl_id = self.env.ref('base_dhl.extra_dimension_product')
         for rec in self:
-            line_id = rec.sale_id.order_line.filtered(lambda l: l.is_extra_dimension)
+            line_id = rec.sale_id.order_line.filtered(
+                lambda l: l.is_extra_dimension)
             if line_id:
                 line_id.sudo().write({
                     'qty_delivered': 0.0,
                     'price_unit': 0.0,
                 })
-            move_line_id = rec.pack_operation_product_ids.filtered(lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
+            move_line_id = rec.pack_operation_product_ids.filtered(
+                lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
             move_line_id.write({
                 'qty_done': 0.0,
                 'product_qty': 0.0,
             })
             return True
 
-    @api.multi
     def set_update_extra_dimension_line(self, vals):
         SaleOrderLine = self.env['sale.order.line']
         prod_tmpl_id = self.env.ref('base_dhl.extra_dimension_product')
         for rec in self:
-            line_id = rec.sale_id.order_line.filtered(lambda l: l.is_extra_dimension)
+            line_id = rec.sale_id.order_line.filtered(
+                lambda l: l.is_extra_dimension)
             if line_id:
                 line_id.sudo().write({
                     'qty_delivered': vals.get('extra_dimension'),
@@ -266,22 +279,24 @@ class StockPicking(models.Model):
                 }
                 line_id = SaleOrderLine.sudo().create(values)
                 line_id.product_id_change()
-            move_line_id = rec.pack_operation_product_ids.filtered(lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
+            move_line_id = rec.pack_operation_product_ids.filtered(
+                lambda a: a.product_id.product_tmpl_id == prod_tmpl_id)
             move_line_id.write({
                 'qty_done': vals.get('extra_dimension'),
                 'product_qty': vals.get('extra_dimension')
             })
             return True
 
-    @api.multi
     def write(self, vals):
         if 'number_of_packages' in vals:
             self.action_set_delivered_qty(vals)
-        if ('is_extra_weight' in vals and vals.get('is_extra_weight')) or 'extra_weight' in vals:
+        if ('is_extra_weight' in vals and vals.get(
+                'is_extra_weight')) or 'extra_weight' in vals:
             self.set_update_extra_weight_line(vals)
         if 'is_extra_weight' in vals and not vals.get('is_extra_weight'):
             self.remove_extra_weight_line()
-        if ('is_extra_dimension' in vals and vals.get('is_extra_dimension')) or 'extra_dimension' in vals:
+        if ('is_extra_dimension' in vals and vals.get(
+                'is_extra_dimension')) or 'extra_dimension' in vals:
             self.set_update_extra_dimension_line(vals)
         if 'is_extra_dimension' in vals and not vals.get('is_extra_dimension'):
             self.remove_extra_dimension_line()
@@ -289,12 +304,14 @@ class StockPicking(models.Model):
 
 
 class StockPackOperation(models.Model):
-    _inherit = 'stock.pack.operation'
+    _inherit = 'stock.move.line'
 
     @api.model
     def create(self, vals):
-        weight_product_id = self.env.ref('base_dhl.extra_weight_product').product_variant_id.id
-        dimension_product_id = self.env.ref('base_dhl.extra_dimension_product').product_variant_id.id
+        weight_product_id = self.env.ref(
+            'base_dhl.extra_weight_product').product_variant_id.id
+        dimension_product_id = self.env.ref(
+            'base_dhl.extra_dimension_product').product_variant_id.id
         res = super(StockPackOperation, self).create(vals)
         if res.picking_id:
             if res.picking_id.is_extra_weight and res.product_id.id == weight_product_id:
@@ -308,4 +325,3 @@ class StockPackOperation(models.Model):
                     'qty_done': res.picking_id.extra_dimension
                 })
         return res
-
