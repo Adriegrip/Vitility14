@@ -20,14 +20,14 @@
         </record>
 
         <!-- QWeb Reports -->
-        <report
-            id="account_invoice_dhl_report"
-            model="stock.picking"
-            string="Custom Invoice"
-            report_type="qweb-pdf"
-            name="dhl_customs_invoice.report_customer_invoice_dhl"
-            file="dhl_customs_invoice.report_customer_invoice_dhl"
-            paperformat="dhl_customs_invoice.paperformat_dhl_invoice_report"
-        />
+        <record id="account_invoice_dhl_report" model="ir.actions.report">
+            <field name="name">Custom Invoice</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="paperformat_id" ref="dhl_customs_invoice.paperformat_dhl_invoice_report"/>
+            <field name="report_name">dhl_customs_invoice.report_customer_invoice_dhl</field>
+            <field name="report_file">dhl_customs_invoice.report_customer_invoice_dhl</field>
+            <field name="binding_model_id" ref="model_stock_picking"/>
+        </record>
     </data>
 </odoo>

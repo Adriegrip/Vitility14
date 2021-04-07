@@ -5,14 +5,7 @@
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
-            <!-- Button to print Customs Invoice -->
-            <!--<xpath expr="//button[@name='button_scrap']" position="after">-->
-            <!--<button name="button_print_custom_invoice" type="object" string="Print Customer Invoice" attrs="{'invisible': ['|',('state','!=','done'),('carrier_delivery_type', '!=', 'dhl')]}"></button>-->
-            <!--</xpath>-->
-
-            <!-- Tracker Code Details -->
-            <xpath expr="//notebook/page[@name='extra']/group[2]/group[2]" position="after">
-
+            <xpath expr="//notebook/page[@name='extra']/group[1]" position="after">
                 <group>
                     <field name="tracker_code_ids" nolabel="1">
                         <tree string="Tracker Code Details" editable="bottom">
@@ -21,21 +14,16 @@
                         </tree>
                     </field>
                 </group>
-
-
             </xpath>
             <group name="carrier_data" position="inside">
                 <label for="reason_export" string="Reason of Export"/>
                 <div>
-
                     <field name="reason_export"/>
                 </div>
             </group>
-            <xpath expr="//notebook/page[@name='extra']/group[2]/group[2]" position="after">
-
+            <xpath expr="//notebook/page[@name='extra']/group[1]" position="after">
                 <field name="export_doc_text" string ="Export Document Text" placeholder="Export Document Text"/>
             </xpath>
-
         </field>
     </record>
 </odoo>

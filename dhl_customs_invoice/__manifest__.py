@@ -5,7 +5,7 @@
     'author': 'Business Agility Masters',
     'website': 'www.businessagilitymasters.com',
     'category': 'Warehouse',
-    'version': '10.0.1.0.4',
+    'version': '14.0.1.0.1',
     'license': 'AGPL-3',
     'depends': [
         'dhl_delivery_label',
