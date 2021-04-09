@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="search_clear_filter" name="Shop: Clear Filter" inherit_id="website_sale.products" >
+       <xpath expr="//div[@id='products_grid_before']//ul[@id='o_shop_collapse_category']" position="before">
+            <form class="navbar-form pull-left"  t-att-action="keep('/shop')" method="get">
+                <span>
+                   <button class="btn btn-link oe_eraser_button text-danger" style="margin-bottom:10px;margin-left:2px">
+                      <i class="fa fa-trash"></i>
+                       Filters verwijderen
+                    </button>
+                </span>
+            </form>
+        </xpath>
+    </template>
+</odoo>

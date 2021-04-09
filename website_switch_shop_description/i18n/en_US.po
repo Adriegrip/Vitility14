@@ -1,0 +1,1031 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_switch_shop_description
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-20 09:27+0000\n"
+"PO-Revision-Date: 2020-08-20 09:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_liter:0
+msgid " cl"
+msgstr " cl"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_m2:0
+#: selection:product.template,x_product_detail_uom_meter:0
+msgid " cm"
+msgstr " cm"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_m2:0
+msgid " cm2"
+msgstr " cm²"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_weight:0
+#: selection:product.template,x_product_detail_uom_weight_2:0
+msgid " gr"
+msgstr " gr"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_weight:0
+#: selection:product.template,x_product_detail_uom_weight_2:0
+msgid " kg"
+msgstr " kg"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_m2:0
+msgid " m2"
+msgstr " m²"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_liter:0
+msgid " ml"
+msgstr " ml"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_uom_meter:0
+msgid " mm"
+msgstr " mm"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_meter
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_meter
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_meter
+msgid "Afmeting"
+msgstr "Afmeting"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_assemble
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_assemble
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_assemble
+msgid "Assemblage met schroeven"
+msgstr "Assemblage met schroeven"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_package_type:0
+msgid "Bag"
+msgstr "Bag"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_diameter_inner
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_diameter_inner
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_diameter_inner
+msgid "Binnen diameter"
+msgstr "Binnen diameter"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_diameter_inner_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_diameter_inner_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_diameter_inner_uk
+msgid "Binnen diameter uk"
+msgstr "Binnen diameter uk"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_package_type:0
+msgid "Box"
+msgstr "Box"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_width
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_width
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_width
+msgid "Breedte"
+msgstr "Width"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_width_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_width_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_width_uk
+msgid "Breedte uk"
+msgstr "Breedte uk"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_package_type:0
+msgid "Card"
+msgstr "Card"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_certificate
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_certificate
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_certificate
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Certificaat"
+msgstr "Certificaat"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_diameter
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_diameter
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_diameter
+msgid "Diameter"
+msgstr "Diameter"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_diameter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_diameter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_diameter_uk
+msgid "Diameter uk"
+msgstr "Diameter uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_max_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_max_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_max_weight
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Draagvermogen"
+msgstr "Carrying Capacity"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_weight_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_weight_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_weight_2
+msgid "Draagvermogen type"
+msgstr "Draagvermogen type"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_ean_link
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_ean_link
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_ean_link
+msgid "EAN Link"
+msgstr "EAN Link"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_one_size
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_one_size
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_one_size
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Een maatvoering"
+msgstr "Een maatvoering"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_elastic
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_elastic
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_elastic
+msgid "Elastisch"
+msgstr "Elastisch"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_max_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_max_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_max_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_weight_uk
+msgid "Engelse maat"
+msgstr "Engelse maat"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_liter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_m2_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_meter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_weight_uk_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_liter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_m2_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_meter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_weight_uk_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_liter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_m2_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_meter_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_weight_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_weight_uk_2
+msgid "Engelse maatvoering"
+msgstr "Engelse maatvoering"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_extra_info
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_extra_info
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_extra_info
+msgid "Extra info"
+msgstr "Extra info"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_extra
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_extra
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_extra
+msgid "Extra informatie"
+msgstr "Extra informatie"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Extrene links"
+msgstr "Extrene links"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_weight
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Gewicht"
+msgstr "Gewicht"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_weight
+msgid "Gewicht type"
+msgstr "Gewicht type"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_function
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_function
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_function
+msgid "Hand functie"
+msgstr "Hand functie"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_angle
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_angle
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_angle
+msgid "Hoek"
+msgstr "Hoek"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_height
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_height
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_height
+msgid "Hoogte"
+msgstr "Hoogte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_height_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_height_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_height_uk
+msgid "Hoogte uk"
+msgstr "Hoogte uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_1
+msgid "Image 1"
+msgstr "Image 1"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_2
+msgid "Image 2"
+msgstr "Image 2"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_3
+msgid "Image 3"
+msgstr "Image 3"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_3d
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_3d
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_3d
+msgid "Image 3d"
+msgstr "Image 3d"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_4
+msgid "Image 4"
+msgstr "Image 4"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_5
+msgid "Image 5"
+msgstr "Image 5"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_6
+msgid "Image 6"
+msgstr "Image 6"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_image_p
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_image_p
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_image_p
+msgid "Image P"
+msgstr "Image P"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_amount
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_amount
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_amount
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Inhoud"
+msgstr "Capacity"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_inhoudps
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_inhoudps
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_inhoudps
+msgid "Inhoud P/S"
+msgstr "Inhoud P/S"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_liter
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_liter
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_liter
+msgid "Inhoud type"
+msgstr "Inhoud type"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_assemble:0
+#: selection:product.template,x_product_detail_one_size:0
+msgid "Ja"
+msgstr "Ja"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_package_type:0
+msgid "Label"
+msgstr "Label"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_length
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_length
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_length
+msgid "Lengte"
+msgstr "Lengte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_length_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_length_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_length_uk
+msgid "Lengte uk"
+msgstr "Lengte uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_link_CE
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_link_CE
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_link_CE
+msgid "Link CE Markering"
+msgstr "Link CE Markering"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_link_grune_punkt
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_link_grune_punkt
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_link_grune_punkt
+msgid "Link Grune Punkt"
+msgstr "Link Grune Punkt"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_link_pap20
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_link_pap20
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_link_pap20
+msgid "Link PAP20"
+msgstr "Link PAP20"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_link_pap21
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_link_pap21
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_link_pap21
+msgid "Link PAP21"
+msgstr "Link PAP21"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_lxbxh
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_lxbxh
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_lxbxh
+msgid "LxBxH"
+msgstr "LxBxH"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_lxbxh_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_lxbxh_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_lxbxh_uk
+msgid "LxBxH uk"
+msgstr "LxBxH uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_microwave
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_microwave
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_microwave
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Magnetron"
+msgstr "Microwave"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Marketing Beeldmateriaal"
+msgstr "Marketing Beeldmateriaal"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_name
+msgid "Name"
+msgstr "Name"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_assemble:0
+#: selection:product.template,x_product_detail_one_size:0
+msgid "Nee"
+msgstr "Nee"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Niet op website zichtbaar"
+msgstr "Niet op website zichtbaar"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_surface
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_surface
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_surface
+msgid "Oppervlakte"
+msgstr "Oppervlakte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_surface_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_surface_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_surface_2
+msgid "Oppervlakte 2"
+msgstr "Oppervlakte 2"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_uom_m2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_uom_m2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_uom_m2
+msgid "Oppervlakte type"
+msgstr "Oppervlakte type"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_oven
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_oven
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_oven
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Oven"
+msgstr "Oven"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Pluspunt lange beschrijving. Eigenschap beschrijving is kop tekst"
+msgstr "Pluspunt lange beschrijving. Eigenschap beschrijving is kop tekst"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Pluspunt waarde, indien gevuld weergave in tabel"
+msgstr "Pluspunt waarde, indien gevuld weergave in tabel"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Pluspunt, onder product beschrijving en onder foto"
+msgstr "Pluspunt, onder product beschrijving en onder foto"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Breedte"
+msgstr "Width"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Diameter"
+msgstr "Diameter"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Gewicht"
+msgstr "Weight"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Hoogte"
+msgstr "Height"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Lengte"
+msgstr "Length"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Opvouwbaar"
+msgstr "Foldable"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Buigbaar"
+msgstr "Bendable"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Bevestiging"
+msgstr "Mount"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Liggend te gebruiken"
+msgstr "Usable when lying down"
+
+#. module: website_switch_shop_description
+#: model:ir.model,name:website_switch_shop_description.model_product_template
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product afmetingen"
+msgstr "Product afmetingen"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product beschrijving, weergave rechts van foto"
+msgstr "Product description, display right of photo"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product bestendig"
+msgstr "Product bestendig"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Product binnen diameter"
+msgstr "Product inside Diameter"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product detail"
+msgstr "Product detail"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product details"
+msgstr "Product details"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product gewicht en inhoud"
+msgstr "Product gewicht en inhoud"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product marketing"
+msgstr "Product marketing"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Product oppervlakte"
+msgstr "Product Surface"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,help:website_switch_shop_description.field_delivery_carrier_x_product_detail_private
+#: model:ir.model.fields,help:website_switch_shop_description.field_product_product_x_product_detail_private
+#: model:ir.model.fields,help:website_switch_shop_description.field_product_template_x_product_detail_private
+msgid "Product private"
+msgstr "Product private"
+
+#. module: website_switch_shop_description
+#: model:ir.actions.act_window,name:website_switch_shop_description.product_group_usage_action
+#: model:ir.ui.menu,name:website_switch_shop_description.menu_product_group_usage
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_usage
+msgid "Product soort"
+msgstr "Product soort"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Product verpakking"
+msgstr "Product verpakking"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Verstelbare breedte"
+msgstr "Adjustable Width"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Verstelbare hoogte"
+msgstr "Adjustable Height"
+
+#. module: website_switch_shop_description
+#: model:ir.model,name:website_switch_shop_description.model_product_group_usage
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_usage
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_usage
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_usage
+msgid "Productsoort"
+msgstr "Productsoort"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_point
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_point
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_point
+msgid "Punt"
+msgstr "Punt"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_qr_link_internal
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_qr_link_internal
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_qr_link_internal
+msgid "QR link code intern"
+msgstr "QR link code intern"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_qr_link
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_qr_link
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_qr_link
+msgid "QR link web"
+msgstr "QR link web"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_private
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_private
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_private
+msgid "SKU2"
+msgstr "SKU2"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_group_usage_sequence
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_package_type:0
+msgid "Sleeve"
+msgstr "Sleeve"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,help:website_switch_shop_description.field_delivery_carrier_x_product_detail_usage
+#: model:ir.model.fields,help:website_switch_shop_description.field_product_product_x_product_detail_usage
+#: model:ir.model.fields,help:website_switch_shop_description.field_product_template_x_product_detail_usage
+msgid "Sorteer volgende voor het gebruik van het product."
+msgstr "Sorteer volgende voor het gebruik van het product."
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,help:website_switch_shop_description.field_product_group_usage_sequence
+msgid "Sorteer volgende voor rapportage gebruik."
+msgstr "Sorteer volgende voor rapportage gebruik."
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_stansmes
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_stansmes
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_stansmes
+msgid "Stansmes"
+msgstr "Stansmes"
+
+#. module: website_switch_shop_description
+#: selection:product.template,x_product_detail_package_type:0
+msgid "Sticker"
+msgstr "Sticker"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_opening
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_opening
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_opening
+msgid "Tuit opening"
+msgstr "Tuit opening"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_type
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_type
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_type
+msgid "Type"
+msgstr "Type"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_field_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_field_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_field_1
+msgid "UBR Waarde veld 1"
+msgstr "UBR Waarde veld 1"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_field_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_field_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_field_2
+msgid "UBR Waarde veld 2"
+msgstr "UBR Waarde veld 2"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_field_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_field_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_field_3
+msgid "UBR Waarde veld 3"
+msgstr "UBR Waarde veld 3"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_field_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_field_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_field_4
+msgid "UBR Waarde veld 4"
+msgstr "UBR Waarde veld 4"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_field_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_field_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_field_5
+msgid "UBR Waarde veld 5"
+msgstr "UBR Waarde veld 5"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_field_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_field_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_field_6
+msgid "UBR Waarde veld 6"
+msgstr "UBR Waarde veld 6"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_label_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_label_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_label_1
+msgid "UBR beschrijving 1"
+msgstr "UBR beschrijving 1"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_label_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_label_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_label_2
+msgid "UBR beschrijving 2"
+msgstr "UBR beschrijving 2"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_label_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_label_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_label_3
+msgid "UBR beschrijving 3"
+msgstr "UBR beschrijving 3"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_label_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_label_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_label_4
+msgid "UBR beschrijving 4"
+msgstr "UBR beschrijving 4"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_label_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_label_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_label_5
+msgid "UBR beschrijving 5"
+msgstr "UBR beschrijving 5"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_label_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_label_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_label_6
+msgid "UBR beschrijving 6"
+msgstr "UBR beschrijving 6"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_long_text_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_long_text_1
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_long_text_1
+msgid "UBR tekst 1"
+msgstr "UBR tekst 1"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_long_text_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_long_text_2
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_long_text_2
+msgid "UBR tekst 2"
+msgstr "UBR tekst 2"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_long_text_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_long_text_3
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_long_text_3
+msgid "UBR tekst 3"
+msgstr "UBR tekst 3"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_long_text_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_long_text_4
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_long_text_4
+msgid "UBR tekst 4"
+msgstr "UBR tekst 4"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_long_text_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_long_text_5
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_long_text_5
+msgid "UBR tekst 5"
+msgstr "UBR tekst 5"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_free_long_text_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_free_long_text_6
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_free_long_text_6
+msgid "UBR tekst 6"
+msgstr "UBR tekst 6"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_dishwasher
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_dishwasher
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_dishwasher
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Vaatwasser"
+msgstr "Dishwasher"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_enlarge
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_enlarge
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_enlarge
+msgid "Vergroot"
+msgstr "Enlarges"
+
+#. module: website_switch_shop_description
+#: model:ir.ui.view,arch_db:website_switch_shop_description.view_product_detail_form_view
+msgid "Verpakking"
+msgstr "Verpakking"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_width
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_width
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_width
+msgid "Verpakking breedte"
+msgstr "Verpakking breedte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_gross_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_gross_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_gross_weight
+msgid "Verpakking gross gewicht"
+msgstr "Verpakking gross gewicht"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_height
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_height
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_height
+msgid "Verpakking hoogte"
+msgstr "Verpakking hoogte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_length
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_length
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_length
+msgid "Verpakking lengte"
+msgstr "Verpakking lengte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_package_netto_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_package_netto_weight
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_package_netto_weight
+msgid "Verpakking netto gewicht"
+msgstr "Verpakking netto gewicht"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_width_adjust
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_width_adjust
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_width_adjust
+msgid "Verstelbare breedte"
+msgstr "Verstelbare breedte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_width_adjust_max
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_width_adjust_max
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_width_adjust_max
+msgid "Verstelbare breedte max"
+msgstr "Verstelbare breedte max"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_width_adjust_max_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_width_adjust_max_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_width_adjust_max_uk
+msgid "Verstelbare breedte max uk"
+msgstr "Verstelbare breedte max uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_width_adjust_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_width_adjust_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_width_adjust_uk
+msgid "Verstelbare breedte uk"
+msgstr "Verstelbare breedte uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_height_adjust
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_height_adjust
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_height_adjust
+msgid "Verstelbare hoogte"
+msgstr "Verstelbare hoogte"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_height_adjust_max
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_height_adjust_max
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_height_adjust_max
+msgid "Verstelbare hoogte max"
+msgstr "Verstelbare hoogte max"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_height_adjust_max_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_height_adjust_max_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_height_adjust_max_uk
+msgid "Verstelbare hoogte max uk"
+msgstr "Verstelbare hoogte max uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_height_adjust_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_height_adjust_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_height_adjust_uk
+msgid "Verstelbare hoogte uk"
+msgstr "Verstelbare hoogte uk"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_marketing_video_status
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_marketing_video_status
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_marketing_video_status
+msgid "Video status"
+msgstr "Video status"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_food_safe
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_food_safe
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_food_safe
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Voedselveilig"
+msgstr "Food safe"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_freezer
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_freezer
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_freezer
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Vriezer"
+msgstr "Freezer"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_warning
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_warning
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_warning
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Waarschuwing"
+msgstr "Warning"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_washer
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_washer
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_washer
+#: model:ir.ui.view,arch_db:website_switch_shop_description.inherit_product_description
+msgid "Wasmachine"
+msgstr "Washing machine"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_website_description_text
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_website_description_text
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_website_description_text
+msgid "Website description"
+msgstr "Website description"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_website_description_text
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_website_description_text
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_website_description_text
+msgid "Website description text"
+msgstr "Website description text"
+
+#. module: website_switch_shop_description
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_amount_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_surface_2_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_delivery_carrier_x_product_detail_surface_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_amount_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_surface_2_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_product_x_product_detail_surface_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_amount_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_surface_2_uk
+#: model:ir.model.fields,field_description:website_switch_shop_description.field_product_template_x_product_detail_surface_uk
+msgid "in Inches"
+msgstr "in Inches"
+

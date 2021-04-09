@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inherit_product_description" inherit_id="website_sale.product">
+
+        <xpath expr="//t/div/section/div[2]/div[2][@id='product_details']" position="inside">
+
+            <div itemprop="description" t-field="product.website_description_text" class="oe_structure mt16"
+                 id="x_product_full_description"/>
+            <br/>
+            <ul class="product_detail_free_label">
+
+                <li t-if="product.x_product_detail_free_label_1">
+                    <span t-field="product.x_product_detail_free_label_1"/>
+                </li>
+                <li t-if="product.x_product_detail_free_label_2">
+                    <span t-field="product.x_product_detail_free_label_2"/>
+                </li>
+                <li t-if="product.x_product_detail_free_label_3">
+                    <span t-field="product.x_product_detail_free_label_3"/>
+                </li>
+                <li t-if="product.x_product_detail_free_label_4">
+                    <span t-field="product.x_product_detail_free_label_4"/>
+                </li>
+                <li t-if="product.x_product_detail_free_label_5">
+                    <span t-field="product.x_product_detail_free_label_5"/>
+                </li>
+                <li t-if="product.x_product_detail_free_label_6">
+                    <span t-field="product.x_product_detail_free_label_6"/>
+                </li>
+            </ul>
+        </xpath>
+
+        <xpath expr="//div[@id='product_full_description']" position="attributes">
+            <attribute name="class">hidden</attribute>
+        </xpath>
+
+
+        <xpath expr="//div[@id='product_full_description']" position="after">
+            <div t-if="product.x_product_detail_free_long_text_1" class="container mt8 detail_free_long_text">
+                <t>
+                    <h6 t-field="product.x_product_detail_free_label_1"/>
+                    <p t-field="product.x_product_detail_free_long_text_1"/>
+                    <br/>
+                </t>
+                <t t-if="product.x_product_detail_free_long_text_2">
+                    <h6 t-field="product.x_product_detail_free_label_2"/>
+                    <p t-field="product.x_product_detail_free_long_text_2"/>
+                    <br/>
+                </t>
+                <t t-if="product.x_product_detail_free_long_text_3">
+                    <h6 t-field="product.x_product_detail_free_label_3"/>
+                    <p t-field="product.x_product_detail_free_long_text_3"/>
+                    <br/>
+                </t>
+                <t t-if="product.x_product_detail_free_long_text_4">
+                    <h6 t-field="product.x_product_detail_free_label_4"/>
+                    <p t-field="product.x_product_detail_free_long_text_4"/>
+                    <br/>
+                </t>
+                <t t-if="product.x_product_detail_free_long_text_5">
+                    <h6 t-field="product.x_product_detail_free_label_5"/>
+                    <p t-field="product.x_product_detail_free_long_text_5"/>
+                    <br/>
+                </t>
+                <t t-if="product.x_product_detail_free_long_text_6">
+                    <h6 t-field="product.x_product_detail_free_label_6"/>
+                    <p t-field="product.x_product_detail_free_long_text_6"/>
+                    <br/>
+                </t>
+            </div>
+            <div class="container mt8">
+                <table id="product_detail_table">
+                    <br/>
+                    <tr t-if="product.x_product_detail_free_field_1">
+                        <td>
+                            <span t-field="product.x_product_detail_free_label_1"/>
+                        </td>
+                        <td>
+                            <span t-field="product.x_product_detail_free_field_1"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_free_field_2">
+                        <td>
+                            <span t-field="product.x_product_detail_free_label_2"/>
+                        </td>
+                        <td>
+                            <span t-field="product.x_product_detail_free_field_2"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_free_field_3">
+                        <td>
+                            <span t-field="product.x_product_detail_free_label_3"/>
+                        </td>
+                        <td>
+                            <span t-field="product.x_product_detail_free_field_3"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_free_field_4">
+                        <td>
+                            <span t-field="product.x_product_detail_free_label_4"/>
+                        </td>
+                        <td>
+                            <span t-field="product.x_product_detail_free_field_4"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_free_field_5">
+                        <td>
+                            <span t-field="product.x_product_detail_free_label_5"/>
+                        </td>
+                        <td>
+                            <span t-field="product.x_product_detail_free_field_5"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_free_field_6">
+                        <td>
+                            <span t-field="product.x_product_detail_free_label_6"/>
+                        </td>
+                        <td>
+                            <span t-field="product.x_product_detail_free_field_6"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_length != 0">
+                        <td>Lengte</td>
+                        <td>
+                            <span t-esc="product.x_product_detail_length"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                            (
+                            <span t-esc="product.x_product_detail_length_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_width != 0">
+                        <td>Breedte</td>
+                        <td>
+                            <span t-esc="product.x_product_detail_width"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                            (
+                            <span t-esc="product.x_product_detail_width_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_height != 0">
+                        <td>Hoogte</td>
+                        <td>
+                            <span t-esc="product.x_product_detail_height"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                            (
+                            <span t-esc="product.x_product_detail_height_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_diameter != 0">
+                        <td>Diameter</td>
+                        <td>
+                            <span t-esc="product.x_product_detail_diameter"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                            (
+                            <span t-esc="product.x_product_detail_diameter_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_height_adjust != 0">
+                        <td>Verstelbare hoogte</td>
+                        <t t-if="product.x_product_detail_height_adjust_max == 0">
+                            <td>
+                                <span t-field="product.x_product_detail_height_adjust"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                                (
+                                <span t-esc="product.x_product_detail_height_adjust_uk"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                            </td>
+                        </t>
+                        <t t-if="product.x_product_detail_height_adjust_max != 0">
+                            <td>
+                                <span t-field="product.x_product_detail_height_adjust"/> -
+                                <span t-field="product.x_product_detail_height_adjust_max"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                                (<span t-esc="product.x_product_detail_height_adjust_uk"/> -
+                                <span t-esc="product.x_product_detail_height_adjust_max_uk"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                            </td>
+                        </t>
+                    </tr>
+                    <tr t-if="product.x_product_detail_width_adjust != 0">
+                        <td>Verstelbare breedte</td>
+                        <t t-if="product.x_product_detail_width_adjust_max == 0">
+                            <td>
+                                <span t-field="product.x_product_detail_width_adjust"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                                (
+                                <span t-esc="product.x_product_detail_width_adjust_uk"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                            </td>
+                        </t>
+                        <t t-if="product.x_product_detail_width_adjust_max != 0">
+                            <td>
+                                <span t-field="product.x_product_detail_width_adjust"/> -
+                                <span t-field="product.x_product_detail_width_adjust_max"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                                (<span t-esc="product.x_product_detail_width_adjust_uk"/> - <span
+                                    t-esc="product.x_product_detail_width_adjust_max_uk"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                            </td>
+                        </t>
+                    </tr>
+                    <tr t-if="product.x_product_detail_surface != 0">
+                        <td>Oppervlakte</td>
+                        <t t-if="product.x_product_detail_uom_m2 != 'CM'">
+                            <td>
+                                <span t-field="product.x_product_detail_surface"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_m2"/>
+                                (
+                                <span t-esc="product.x_product_detail_surface_uk"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_m2_uk"/>)
+                            </td>
+                        </t>
+                        <t t-if="product.x_product_detail_uom_m2 == 'CM'">
+                            <td>
+                                <span t-field="product.x_product_detail_surface"/> x
+                                <span t-field="product.x_product_detail_surface_2"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_m2"/>
+                                (<span t-esc="product.x_product_detail_surface_uk"/> -
+                                <span t-esc="product.x_product_detail_surface_2_uk"/>
+                                <span style="font-size:12px" t-field="product.x_product_detail_uom_m2_uk"/>)
+                            </td>
+                        </t>
+                    </tr>
+                    <tr t-if="product.x_product_detail_diameter_inner != 0">
+                        <td>Binnen diameter</td>
+                        <td>
+                            <span t-field="product.x_product_detail_diameter_inner"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter"/>
+                            (
+                            <span t-esc="product.x_product_detail_diameter_inner_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_meter_uk"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_weight != 0">
+                        <td>Gewicht</td>
+                        <td>
+                            <span t-esc="product.x_product_detail_weight"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_weight"/>
+                            (
+                            <span t-esc="product.x_product_detail_weight_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_weight_uk"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_max_weight != 0">
+                        <td>Draagvermogen</td>
+                        <td>
+                            <span t-field="product.x_product_detail_max_weight"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_weight_2"/>
+                            (
+                            <span t-esc="product.x_product_detail_max_weight_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_weight_uk_2"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_amount != 0">
+                        <td>Inhoud</td>
+                        <td>
+                            <span t-field="product.x_product_detail_amount"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_liter"/>
+                            (
+                            <span t-esc="product.x_product_detail_amount_uk"/>
+                            <span style="font-size:12px" t-field="product.x_product_detail_uom_liter_uk"/>)
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_assemble">
+                        <td>Een maatvoering</td>
+                        <td>
+                            <span t-field="product.x_product_detail_assemble"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_dishwasher">
+                        <td>Vaatwasser</td>
+                        <td>
+                            <span t-field="product.x_product_detail_dishwasher"/>
+                            <t t-if="product.x_product_detail_dishwashertemp">tot
+                                <span t-field="product.x_product_detail_dishwashertemp"/>°C
+                            </t>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_freezer">
+                        <td>Vriezer</td>
+                        <td>
+                            <span t-field="product.x_product_detail_freezer"/>
+                            <t t-if="product.x_product_detail_freezertemp">tot
+                                <span t-field="product.x_product_detail_freezertemp"/>°C
+                            </t>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_microwave">
+                        <td>Magnetron</td>
+                        <td>
+                            <span t-field="product.x_product_detail_microwave"/>
+                            <t t-if="product.x_product_detail_microwavetemp">tot
+                                <span t-field="product.x_product_detail_microwavetemp"/>°C
+                            </t>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_oven">
+                        <td>Oven</td>
+                        <td>
+                            <span t-field="product.x_product_detail_oven"/>
+                            <t t-if="product.x_product_detail_oventemp">tot
+                                <span t-field="product.x_product_detail_oventemp"/>°C
+                            </t>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_washer">
+                        <td>Wasmachine</td>
+                        <td>
+                            <span t-field="product.x_product_detail_washer"/>
+                            <t t-if="product.x_product_detail_washertemp">tot
+                                <span t-field="product.x_product_detail_washertemp"/>°C
+                            </t>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_food_safe">
+                        <td>Voedselveilig</td>
+                        <td>
+                            <span t-field="product.x_product_detail_food_safe"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_warning">
+                        <td>Waarschuwing</td>
+                        <td>
+                            <span t-field="product.x_product_detail_warning"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_foldable">
+                        <td>Opvouwbaar</td>
+                        <td>
+                            <span t-field="product.x_product_detail_foldable"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_bendable">
+                        <td>Buigbaar</td>
+                        <td>
+                            <span t-field="product.x_product_detail_bendable"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_mount">
+                        <td>Bevestiging</td>
+                        <td>
+                            <span t-field="product.x_product_detail_mount"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_autoclaaf">
+                        <td>Autoclaaf</td>
+                        <td>
+                            <span t-field="product.x_product_detail_autoclaaf"/>
+                            <t t-if="product.x_product_detail_autoclaaftemp">tot
+                                <span t-field="product.x_product_detail_autoclaaftemp"/>°C
+                            </t>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_lying_down">
+                        <td>Liggend te gebruiken</td>
+                        <td>
+                            <span t-field="product.x_product_detail_lying_down"/>
+                        </td>
+                    </tr>
+                    <tr t-if="product.x_product_detail_angle">
+                        <td>Hoek</td>
+                        <td>
+                            <span t-field="product.x_product_detail_angle"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </xpath>
+    </template>
+</odoo>
