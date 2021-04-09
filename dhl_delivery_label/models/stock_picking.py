@@ -1,23 +1,21 @@
 # -*- coding: utf-8 -*-
+# Copyright 2017 Onestein (<http://www.onestein.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import json
+import urllib.request
 import uuid
 import base64
-try:
-    from urllib.request import Request, urlopen
-    from urllib import parse
-except ImportError:
-    import urllib2
 
 
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
     carrier_delivery_type = fields.Selection(related='carrier_id.delivery_type')
+    number_of_packages = fields.Integer(string='Number of Packages', copy=False)
     tracker_code = fields.Char("Tracker Code")
 
     def button_print_dhl_label(self):
@@ -33,8 +31,7 @@ class StockPicking(models.Model):
             (self.carrier_id.dhl_password, _('DHL Password on Carrier')),
             (self.carrier_id.dhl_parcel_type, _('DHL Parcel Type on Carrier')),
             (self.carrier_id.dhl_account_id, _('DHL Account ID on Carrier')),
-            (self.carrier_id.dhl_shipment_option,
-             _('DHL Shipment Option on Carrier')),
+            (self.carrier_id.dhl_shipment_option, _('DHL Shipment Option on Carrier')),
             (self.partner_id.country_id, _('Country ID on Partner')),
             (self.partner_id.zip, _('Postal Code on Partner')),
             (self.partner_id.street_name, _('Street Name on Partner')),
@@ -44,10 +41,8 @@ class StockPicking(models.Model):
             (self.partner_id.phone, _('Phone on Partner')),
             (self.company_id.partner_id.country_id, _('Country on Company')),
             (self.company_id.partner_id.zip, _('Postal Code on Company')),
-            (self.company_id.partner_id.street_name,
-             _('Street Name on Company')),
-            (self.company_id.partner_id.street_number,
-             _('Street Number on Company')),
+            (self.company_id.partner_id.street_name, _('Street Name on Company')),
+            (self.company_id.partner_id.street_number, _('Street Number on Company')),
             (self.company_id.partner_id.city, _('City on Company')),
             (self.company_id.email, _('e-mail on Company')),
             (self.company_id.phone, _('Phone on Company')),
@@ -55,8 +50,7 @@ class StockPicking(models.Model):
 
         for item in to_check:
             if not item[0]:
-                raise ValidationError(_("Field ") + item[1] + _(
-                    " not found! Please, set it and retry."))
+                raise ValidationError(_("Field ") + item[1] + _(" not found! Please, set it and retry."))
 
         is_return = False
         for move in self.move_lines:
@@ -80,33 +74,34 @@ class StockPicking(models.Model):
             lastname = partner.lastname
             company_name = partner.parent_id.name
         else:
-            firstname = ''
-            lastname = ''
+            firstname = ""
+            lastname = ""
             company_name = partner.name
 
+
         if carrier.prod_environment:
-            api_base_url = 'https://api-gw.dhlparcel.nl/'
+            api_base_url = "https://api-gw.dhlparcel.nl/"
         else:
-            api_base_url = 'https://api-gw-accept.dhlparcel.nl/'
+            api_base_url = "https://api-gw-accept.dhlparcel.nl/"
 
         try:
-            request_xml = {
+            request_xml = json.dumps({
                 "userId": carrier.dhl_user_id,
                 "key": carrier.dhl_password,
-            }
-            request_xml = parse.urlencode(request_xml)
-            request_xml = request_xml.encode('ascii')
-            auth_req = Request(
-                url=api_base_url + 'authenticate/api-key',
+                "accountNumbers": [carrier.dhl_account_id]
+            }).encode()
+
+            auth_req = urllib.request.Request(
+                url=api_base_url+"authenticate/api-key",
                 data=request_xml,
-                headers={'Content-Type': 'application/json'}
-            )
-            access_token = json.loads(urlopen(auth_req).read())['accessToken']
-        except Exception:
-            raise ValidationError(_("Error during authentication: "))
+                headers={"Content-Type":"application/json",
+                        })
+            access_token = json.loads(urllib.request.urlopen(auth_req).read())['accessToken']
+        except Exception as e:
+            raise ValidationError(_("Error during authentication: ") + e.msg)
 
         tracker_codes = []
-        for i in range(0, self.number_of_packages):
+        for i in range (0,self.number_of_packages):
 
             labelId = uuid.uuid4().urn[9:]
 
@@ -125,7 +120,6 @@ class StockPicking(models.Model):
                         "postalCode": partner.zip,
                         "city": partner.city,
                         "street": partner.street_name,
-                        "additionalAddressLine": partner.street2 or '',
                         "number": partner.street_number,
                         "isBusiness": self.number_of_packages > 1 and True or partner.is_company,
                     },
@@ -160,7 +154,7 @@ class StockPicking(models.Model):
                     }
                 ],
                 "returnLabel": is_return,
-                "pieceNumber": i + 1,
+                "pieceNumber": i+1,
                 "quantity": self.number_of_packages,
                 "automaticPrintDialog": True
             }
@@ -173,52 +167,49 @@ class StockPicking(models.Model):
                 request_xml["options"].append({
                     "key": "EVE",
                 })
+            if carrier.express_delivery:
+                request_xml["options"].append({
+                    "key": "EXP",
+                })
 
-            request_xml = json.dumps(request_xml)
+            request_xml = json.dumps(request_xml).encode()
 
             try:
 
-                labels_req = Request(
-                    url=api_base_url + 'labels',
+                labels_req = urllib.request.Request(
+                    url=api_base_url+"labels",
                     data=request_xml,
-                    headers={'Content-Type': 'application/json'}
+                    headers={"Content-Type": "application/json"}
                 )
 
-                labels_req.add_header("Authorization",
-                                      "Bearer %s" % access_token)
+                labels_req.add_header("Authorization", "Bearer %s" % access_token)
                 labels_req.add_header("Accept", "application/pdf")
-                label_data = urlopen(labels_req).read()
+                label_data = urllib.request.urlopen(labels_req).read()
                 label_data = base64.b64encode(label_data)
 
-            except Exception:
-                raise ValidationError(
-                    _("Error during label creation: "))
+            except Exception as e:
+                raise ValidationError(_("Error during label creation: ") + e.msg)
 
             try:
 
-                retrieve_req = Request(
-                    url=api_base_url + 'labels/' + labelId,
+                retrieve_req = urllib.request.Request(
+                    url=api_base_url+'labels/'+labelId,
                     headers={'Content-Type': 'application/json'}
                 )
-                retrieve_req.add_header("Authorization",
-                                        "Bearer %s" % access_token)
+                retrieve_req.add_header("Authorization", "Bearer %s" % access_token)
 
-                retrieve_data = urlopen(retrieve_req).read()
+                retrieve_data = urllib.request.urlopen(retrieve_req).read()
                 tracker_codes.append(json.loads(retrieve_data)['trackerCode'])
-            except Exception:
-                raise ValidationError(
-                    _("Error during label retrieval: "))
+            except Exception as e:
+                raise ValidationError(_("Error during label retrieval: ") + e.msg)
 
             self.env['ir.attachment'].create({
-                'name': self.name + '-' + str(i + 1) + '/' + str(
-                    self.number_of_packages) + '.pdf',
+                'name': self.name + '-' + str(i+1) + '/' + str(self.number_of_packages) + '.pdf',
                 'datas': label_data,
-                'datas_fname': self.name + '-' + str(i + 1) + '/' + str(
-                    self.number_of_packages) + '.pdf',
                 'res_model': 'stock.picking',
                 'res_id': self.id,
             })
 
-        self.tracker_code = '; '.join(tracker_codes)
+        self.carrier_tracking_ref = '; '.join(tracker_codes)
 
         return

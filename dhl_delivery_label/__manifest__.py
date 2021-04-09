@@ -13,9 +13,6 @@
         'stock',
         'delivery',
         'base_dhl',
-        'partner_street_number',
-        'partner_firstname',
-        'delivery_package_number'
     ],
     'data': [
         'views/stock_picking_view.xml',

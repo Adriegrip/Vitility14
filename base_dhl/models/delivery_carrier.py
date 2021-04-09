@@ -24,6 +24,7 @@ class DeliveryCarrier(models.Model):
          ('PALLET', 'Pallet')], default="SMALL",
         string="DHL Parcel Type")
     dhl_account_id = fields.Char(string="DHL Account ID")
+    express_delivery = fields.Boolean(string="express delivery")
 
 
 class SaleOrder(models.Model):
