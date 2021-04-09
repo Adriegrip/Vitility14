@@ -8,7 +8,8 @@ import json
 import uuid
 import base64
 try:
-    import urllib.request as urllib2
+    from urllib.request import Request, urlopen
+    from urllib import parse
 except ImportError:
     import urllib2
 
@@ -89,19 +90,20 @@ class StockPicking(models.Model):
             api_base_url = 'https://api-gw-accept.dhlparcel.nl/'
 
         try:
-            request_xml = json.dumps({
+            request_xml = {
                 "userId": carrier.dhl_user_id,
                 "key": carrier.dhl_password,
-            })
-
+            }
+            request_xml = parse.urlencode(request_xml)
+            request_xml = request_xml.encode('ascii')
             auth_req = Request(
                 url=api_base_url + 'authenticate/api-key',
                 data=request_xml,
                 headers={'Content-Type': 'application/json'}
             )
             access_token = json.loads(urlopen(auth_req).read())['accessToken']
-        except Exception as e:
-            raise ValidationError(_("Error during authentication: ") + e.msg)
+        except Exception:
+            raise ValidationError(_("Error during authentication: "))
 
         tracker_codes = []
         for i in range(0, self.number_of_packages):
@@ -188,9 +190,9 @@ class StockPicking(models.Model):
                 label_data = urlopen(labels_req).read()
                 label_data = base64.b64encode(label_data)
 
-            except Exception as e:
+            except Exception:
                 raise ValidationError(
-                    _("Error during label creation: ") + e.msg)
+                    _("Error during label creation: "))
 
             try:
 
@@ -203,9 +205,9 @@ class StockPicking(models.Model):
 
                 retrieve_data = urlopen(retrieve_req).read()
                 tracker_codes.append(json.loads(retrieve_data)['trackerCode'])
-            except Exception as e:
+            except Exception:
                 raise ValidationError(
-                    _("Error during label retrieval: ") + e.msg)
+                    _("Error during label retrieval: "))
 
             self.env['ir.attachment'].create({
                 'name': self.name + '-' + str(i + 1) + '/' + str(
