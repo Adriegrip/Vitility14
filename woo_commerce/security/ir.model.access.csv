@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_woo_commerce,access.woo.commerce,model_woo_commerce,base.group_user,1,1,1,1
+access_woo_order_coupons,access.woo.order.coupons,model_woo_order_coupons,base.group_user,1,1,1,1
+access_woo_wizard,woo.wizard,model_woo_wizard,base.group_user,1,1,1,1
